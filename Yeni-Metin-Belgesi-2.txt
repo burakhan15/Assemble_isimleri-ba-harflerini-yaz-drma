@@ -1,0 +1,141 @@
+TRISC = %00000000              'C Portunun tüm bacaklarý (0) Çýkýþ olarak ayarlandý
+TRISD = %00000000              'D Portunun tüm bacaklarý (0) Çýkýþ olarak ayarlandý
+'       %76543210              'Portun bacak numaralý tersten tanýmlanýyor. 7 numaralý bacak 7 Segment displayda "." olarak belirlendiði için kullanýlmýyor.
+
+BASLA :
+
+' 1. kullanýcý  ********************************
+'Kullanýcýnýn isminin baþ hafi için C portunu kullandýk. 
+
+PORTC.0 = 1               (C portunun 0. bacaðý ortak anod kullanýldýðý için (1) = 0 V gönderecek.
+PORTC.1 = 1               (C portunun 1. bacaðý ortak anod kullanýldýðý için (1) = 0 V gönderecek.
+PORTC.2 = 0               (C portunun 2. bacaðý ortak anod kullanýldýðý için (0) = 5 V gönderecek.
+PORTC.3 = 1               (C portunun 3. bacaðý ortak anod kullanýldýðý için (1) = 0 V gönderecek.
+PORTC.4 = 0               (C portunun 4. bacaðý ortak anod kullanýldýðý için (0) = 5 V gönderecek.
+PORTC.5 = 1               (C portunun 5. bacaðý ortak anod kullanýldýðý için (1) = 0 V gönderecek.
+PORTC.6 = 0               (C portunun 6. bacaðý ortak anod kullanýldýðý için (0) = 5 V gönderecek.
+
+'Kullanýcýnýn Soy isminin baþ hafi için D portunu kullandýk. 
+PORTD.0 = 1
+PORTD.1 = 1
+PORTD.2 = 1
+PORTD.3 = 0
+PORTD.4 = 0
+PORTD.5 = 1
+PORTD.6 = 0
+
+
+
+PAUSE 1000
+'Belirlediðimiz süre ms cinsinden 1000ms = 1s bekliyoruz.
+
+'C ve D portlarýnýn tüm bacaklarýný "1" yani 0 yapmamýz gerekiyor. Çünkü diðer kullanýcýnýn isim ve soy isimle karýþmamasý için.
+PORTC.0 = 1
+PORTC.1 = 1
+PORTC.2 = 1
+PORTC.3 = 1
+PORTC.4 = 1
+PORTC.5 = 1
+PORTC.6 = 1
+
+
+PORTD.0 = 1
+PORTD.1 = 1
+PORTD.2 = 1
+PORTD.3 = 1
+PORTD.4 = 1
+PORTD.5 = 1
+PORTD.6 = 1
+
+
+
+PAUSE 1000
+'***********************************************
+
+' 2. kullanýcý  ********************************
+PORTC.0 = 0
+PORTC.1 = 0
+PORTC.2 = 0
+PORTC.3 = 1
+PORTC.4 = 0
+PORTC.5 = 0
+PORTC.6 = 0
+
+
+PORTD.0 = 1
+PORTD.1 = 0
+PORTD.2 = 0
+PORTD.3 = 1
+PORTD.4 = 1
+PORTD.5 = 1
+PORTD.6 = 1
+
+
+PAUSE 1000
+
+PORTC.0 = 1
+PORTC.1 = 1
+PORTC.2 = 1
+PORTC.3 = 1
+PORTC.4 = 1
+PORTC.5 = 1
+PORTC.6 = 1
+
+
+PORTD.0 = 1
+PORTD.1 = 1
+PORTD.2 = 1
+PORTD.3 = 1
+PORTD.4 = 1
+PORTD.5 = 1
+PORTD.6 = 1
+
+
+PAUSE 1000
+'***********************************************
+
+' 3. kullanýcý ********************************
+PORTC.0 = 1
+PORTC.1 = 0
+PORTC.2 = 0
+PORTC.3 = 1
+PORTC.4 = 1
+PORTC.5 = 1
+PORTC.6 = 1
+
+
+PORTD.0 = 1
+PORTD.1 = 0
+PORTD.2 = 0
+PORTD.3 = 0
+PORTD.4 = 0
+PORTD.5 = 1
+PORTD.6 = 0
+
+
+PAUSE 1000
+
+PORTC.0 = 1
+PORTC.1 = 1
+PORTC.2 = 1
+PORTC.3 = 1
+PORTC.4 = 1
+PORTC.5 = 1
+PORTC.6 = 1
+
+
+PORTD.0 = 1
+PORTD.1 = 1
+PORTD.2 = 1
+PORTD.3 = 1
+PORTD.4 = 1
+PORTD.5 = 1
+PORTD.6 = 1
+
+
+PAUSE 1000
+
+
+GOTO BASLA
+
+END
